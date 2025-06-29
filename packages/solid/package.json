@@ -1,6 +1,6 @@
 {
 	"name": "@circonomit/solid-flow",
-	"version": "0.0.5",
+	"version": "0.0.6",
 	"description": "Solid Flow - A highly customizable Solid library for building node-based editors and interactive flow charts.",
 	"license": "MIT",
 	"repository": {
