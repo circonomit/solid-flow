@@ -1,5 +1,7 @@
 ## [Unreleased]
 
+- Fix release
+
 ## [0.0.3] - 2025-06-29
 
 - Fix release

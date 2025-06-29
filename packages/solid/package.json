@@ -16,12 +16,13 @@
 	"keywords": [
 		"solid-flow"
 	],
-	"main": "dist/index.mjs",
+	"type": "module",
+	"main": "dist/index.js",
 	"exports": {
 		".": {
-			"types": "./dist/index.d.mts",
+			"types": "./dist/index.d.ts",
 			"solid": "./dist/index.jsx",
-			"default": "./dist/index.mjs"
+			"default": "./dist/index.js"
 		},
 		"./dist/base.css": "./dist/styles/base.css",
 		"./dist/style.css": "./dist/styles/style.css",
@@ -42,7 +43,7 @@
 	"sideEffects": [
 		"*.css"
 	],
-	"types": "dist/index.d.mts",
+	"types": "dist/index.d.ts",
 	"dependencies": {
 		"@solid-primitives/map": "^0.7.2",
 		"@xyflow/system": "^0.0.65",
