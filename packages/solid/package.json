@@ -16,11 +16,18 @@
 	"keywords": [
 		"solid-flow"
 	],
+	"main": "dist/index.mjs",
 	"exports": {
-		".": "./src/index.tsx",
+		".": {
+			"types": "./dist/index.d.mts",
+			"solid": "./dist/index.jsx",
+			"default": "./dist/index.mjs"
+		},
 		"./dist/base.css": "./dist/styles/base.css",
-		"./dist/style.css": "./dist/styles/style.css"
+		"./dist/style.css": "./dist/styles/style.css",
+		"./package.json": "./package.json"
 	},
+	"module": "dist/index.mjs",
 	"files": [
 		"dist"
 	],
@@ -29,13 +36,13 @@
 	},
 	"scripts": {
 		"build": "tsup",
-		"typecheck": "tsc",
-		"release-it": "release-it --config ../../release-it.json"
+		"release-it": "release-it --config ../../release-it.json",
+		"typecheck": "tsc"
 	},
 	"sideEffects": [
 		"*.css"
 	],
-	"types": "./dist/index.d.mts",
+	"types": "dist/index.d.mts",
 	"dependencies": {
 		"@solid-primitives/map": "^0.7.2",
 		"@xyflow/system": "^0.0.65",
@@ -49,7 +56,6 @@
 		"@types/node": "^24.0.7",
 		"ajv": "^8.17.1",
 		"autoprefixer": "^10.4.21",
-		"clean-package": "^2.2.0",
 		"cssnano": "^7.0.7",
 		"eslint-plugin-solid": "^0.14.5",
 		"postcss": "^8.5.6",
