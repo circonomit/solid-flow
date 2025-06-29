@@ -1,0 +1,79 @@
+{
+	"name": "@circonomit/solid-flow",
+	"version": "0.0.1",
+	"description": "Solid Flow - A highly customizable Solid library for building node-based editors and interactive flow charts.",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/circonomit/solid-flow.git",
+		"directory": "packages/solid"
+	},
+	"keywords": [
+		"solid-flow"
+	],
+	"main": "dist/index.js",
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"import": "./dist/index.js",
+			"require": "./dist/index.js"
+		},
+		"./dist/base.css": "./dist/base.css",
+		"./dist/style.css": "./dist/style.css"
+	},
+	"module": "dist/index.js",
+	"files": [
+		"dist",
+		"src"
+	],
+	"publishConfig": {
+		"access": "public"
+	},
+	"scripts": {
+		"build": "rollup --config --environment NODE_ENV:production && npm run css",
+		"css": "postcss src/styles/{base,style}.css --config --dir dist ",
+		"css:watch": "bun css --watch",
+		"dev": "concurrently \"rollup --config --watch\" bun css:watch",
+		"typecheck": "tsc --noEmit"
+	},
+	"rollup": {
+		"globals": {
+			"classcat": "cc"
+		},
+		"name": "SolidFlow"
+	},
+	"sideEffects": [
+		"*.css"
+	],
+	"source": "src/index.ts",
+	"types": "dist/index.d.ts",
+	"dependencies": {
+		"@solid-primitives/map": "^0.7.1",
+		"@xyflow/system": "^0.0.63",
+		"classcat": "^5.0.5"
+	},
+	"peerDependencies": {
+		"solid-js": ">=1.8"
+	},
+	"devDependencies": {
+		"@babel/preset-typescript": "^7.27.1",
+		"@rollup/plugin-babel": "^6.0.4",
+		"@rollup/plugin-node-resolve": "^16.0.1",
+		"@rollup/plugin-typescript": "^12.1.3",
+		"@types/node": "^24.0.3",
+		"autoprefixer": "^10.4.21",
+		"babel-preset-solid": "^1.9.6",
+		"cssnano": "^7.0.7",
+		"eslint-plugin-solid": "^0.14.5",
+		"postcss": "^8.5.6",
+		"postcss-cli": "^11.0.1",
+		"postcss-combine-duplicated-selectors": "^10.0.3",
+		"postcss-import": "^16.1.1",
+		"postcss-nested": "^7.0.2",
+		"postcss-rename": "^0.8.0",
+		"rollup": "^4.44.0",
+		"rollup-plugin-postcss": "^4.0.2",
+		"solid-js": "^1.9.7",
+		"typescript": "5.8.3"
+	}
+}

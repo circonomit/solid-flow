@@ -1,0 +1,37 @@
+{
+	"name": "solid-flow",
+	"version": "0.1.0",
+	"license": "MIT",
+	"author": "Erik Müller <erik@circonomit.de>",
+	"type": "module",
+	"module": "index.ts",
+	"workspaces": [
+		"packages/*",
+		"examples/*"
+	],
+	"scripts": {
+		"build": "turbo run build",
+		"lint": "turbo run lint",
+		"lint:apply": "biome check --write .",
+		"lint:check": "biome check .",
+		"postinstall": "lefthook install",
+		"solid": "bun run --cwd packages/solid",
+		"test": "turbo run test:ci --concurrency=1",
+		"typecheck": "turbo run typecheck"
+	},
+	"packageManager": "bun@1.2.17",
+	"peerDependencies": {
+		"typescript": "^5.8.3"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^2.0.5",
+		"@dotenvx/dotenvx": "^1.45.1",
+		"@release-it/keep-a-changelog": "^7.0.0",
+		"@types/bun": "^1.2.17",
+		"esbuild-plugin-solid": "^0.6.0",
+		"lefthook": "^1.11.14",
+		"release-it": "^19.0.3",
+		"tsup": "^8.5.0",
+		"turbo": "^2.5.4"
+	}
+}
