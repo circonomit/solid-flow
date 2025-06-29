@@ -15,6 +15,7 @@
 		}
 	},
 	"npm": {
+		"publish": false,
 		"versionArgs": ["--workspaces-update=false"],
 		"publishPath": "./dist/"
 	},
