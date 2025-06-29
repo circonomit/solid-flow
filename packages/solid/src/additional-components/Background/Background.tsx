@@ -1,5 +1,5 @@
 import cc from "classcat";
-import { createEffect, type JSX, mergeProps, Show, splitProps } from "solid-js";
+import { type JSX, mergeProps, Show } from "solid-js";
 import { useStore } from "../../hooks/useStore";
 import { containerStyle } from "../../styles/utils";
 import type { SolidFlowState } from "../../types";
@@ -77,7 +77,7 @@ function BackgroundComponent(_p: BackgroundProps) {
 
 	return (
 		<svg
-			class={cc(["react-flow__background", p.className])}
+			class={cc(["solid-flow__background", p.className])}
 			style={style()}
 			ref={(el) => (ref.current = el)}
 			data-testid="rf__background"
@@ -129,13 +129,13 @@ BackgroundComponent.displayName = "Background";
  * A simple example of how to use the Background component.
  *
  * ```tsx
- * import { ReactFlow, Background, BackgroundVariant } from '@circonomit/solid-flow';
+ * import { SolidFlow, Background, BackgroundVariant } from '@circonomit/solid-flow';
  *
  * export default function Flow() {
  *   return (
- *     <ReactFlow defaultNodes={[...]} defaultEdges={[...]}>
+ *     <SolidFlow defaultNodes={[...]} defaultEdges={[...]}>
  *       <Background color="#ccc" variant={BackgroundVariant.Dots} />
- *     </ReactFlow>
+ *     </SolidFlow>
  *   );
  * }
  * ```
@@ -145,12 +145,12 @@ BackgroundComponent.displayName = "Background";
  * In this example you can see how to combine multiple backgrounds
  *
  * ```tsx
- * import { ReactFlow, Background, BackgroundVariant } from '@circonomit/solid-flow';
+ * import { SolidFlow, Background, BackgroundVariant } from '@circonomit/solid-flow';
  * import '@circonomit/solid-flow/dist/style.css';
  *
  * export default function Flow() {
  *   return (
- *     <ReactFlow defaultNodes={[...]} defaultEdges={[...]}>
+ *     <SolidFlow defaultNodes={[...]} defaultEdges={[...]}>
  *       <Background
  *         id="1"
  *         gap={10}
@@ -163,7 +163,7 @@ BackgroundComponent.displayName = "Background";
  *         color="#ccc"
  *         variant={BackgroundVariant.Lines}
  *       />
- *     </ReactFlow>
+ *     </SolidFlow>
  *   );
  * }
  * ```

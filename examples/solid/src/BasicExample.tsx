@@ -2,18 +2,15 @@
 import {
 	Background,
 	BackgroundVariant,
-	BuiltInNode,
 	Controls,
 	type Edge,
 	MiniMap,
 	type Node,
-	type NodeTypes,
-	ReactFlow,
-	ReactFlowProvider,
+	SolidFlow,
+	SolidFlowProvider,
 } from "@circonomit/solid-flow";
-
-import "@circonomit/solid-flow/dist/style.css";
-import "@circonomit/solid-flow/dist/base.css";
+import "@circonomit/solid-flow/dist/styles/style.css";
+import "@circonomit/solid-flow/dist/styles/base.css";
 
 import { createSignal } from "solid-js";
 
@@ -81,20 +78,20 @@ export const BasicExample = () => {
 		},
 	]);
 	return (
-		<ReactFlowProvider>
+		<SolidFlowProvider>
 			<div
 				style={{
 					height: "90vh",
 					width: "90vw",
 				}}
 			>
-				<ReactFlow nodes={nodes()} edges={edges()} fitView panOnDrag>
+				<SolidFlow nodes={nodes()} edges={edges()} fitView panOnDrag>
 					<Controls />
 					<Background variant={BackgroundVariant.Dots} />
 					<MiniMap />
-				</ReactFlow>
+				</SolidFlow>
 			</div>
-		</ReactFlowProvider>
+		</SolidFlowProvider>
 	);
 	// </script>
 };

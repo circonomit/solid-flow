@@ -1,19 +1,16 @@
 import type { ReactiveMap } from "@solid-primitives/map";
 import type {
-	ConnectionLookup,
 	ConnectionMode,
 	ConnectionState,
 	CoordinateExtent,
 	EdgeBase,
 	EdgeChange,
-	EdgeLookup,
 	Handle,
 	HandleConnection,
 	InternalNodeBase,
 	InternalNodeUpdate,
 	NodeBase,
 	NodeChange,
-	NodeLookup,
 	NodeOrigin,
 	OnConnect,
 	OnConnectEnd,
@@ -26,7 +23,6 @@ import type {
 	OnViewportChange,
 	PanBy,
 	PanZoomInstance,
-	ParentLookup,
 	SelectionRect,
 	SnapGrid,
 	Transform,
@@ -174,7 +170,7 @@ export type SolidFlowStore<
 	debug: Writable<boolean>;
 };
 
-export type ReactFlowActions<NodeType extends Node, EdgeType extends Edge> = {
+export type SolidFlowActions<NodeType extends Node, EdgeType extends Edge> = {
 	setNodes: (nodes: NodeType[]) => void;
 	setEdges: (edges: EdgeType[]) => void;
 	setDefaultNodesAndEdges: (nodes?: NodeType[], edges?: EdgeType[]) => void;
@@ -205,4 +201,4 @@ export type ReactFlowActions<NodeType extends Node, EdgeType extends Edge> = {
 export type SolidFlowState<
 	NodeType extends Node = Node,
 	EdgeType extends Edge = Edge,
-> = SolidFlowStore<NodeType, EdgeType> & ReactFlowActions<NodeType, EdgeType>;
+> = SolidFlowStore<NodeType, EdgeType> & SolidFlowActions<NodeType, EdgeType>;

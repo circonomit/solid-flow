@@ -23,7 +23,7 @@ function MiniMapNodeComponent({
 
 	return (
 		<rect
-			class={cc(["react-flow__minimap-node", { selected }, className])}
+			class={cc(["solid-flow__minimap-node", { selected }, className])}
 			x={x}
 			y={y}
 			rx={borderRadius}

@@ -11,7 +11,7 @@ import {
 	SelectionMode,
 } from "@xyflow/system";
 import cc from "classcat";
-import { JSX, mergeProps, type ParentProps } from "solid-js";
+import { mergeProps, type ParentProps } from "solid-js";
 import { UserSelection } from "../../components/UserSelection";
 import { useStore, useStoreApi } from "../../hooks/useStore";
 import { containerStyle } from "../../styles/utils";
@@ -280,7 +280,7 @@ export function Pane(_p: ParentProps<PaneProps>) {
 	return (
 		<div
 			class={cc([
-				"react-flow__pane",
+				"solid-flow__pane",
 				{
 					draggable: draggable(),
 					dragging: storeData.dragging(),

@@ -87,7 +87,7 @@ export { StepEdge } from "./components/Edges/StepEdge";
 export { StraightEdge } from "./components/Edges/StraightEdge";
 export { Handle, type HandleProps } from "./components/Handle";
 export { Panel, type PanelProps } from "./components/Panel";
-export { ReactFlowProvider } from "./components/ReactFlowProvider";
+export { SolidFlowProvider } from "./components/SolidFlowProvider";
 export { ViewportPortal } from "./components/ViewportPortal";
 export { default as SolidFlow } from "./container/SolidFlow";
 export { useNodeId } from "./contexts/NodeIdContext";

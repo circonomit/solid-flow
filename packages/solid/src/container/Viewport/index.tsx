@@ -10,7 +10,7 @@ export function Viewport(p: ParentProps) {
 
 	return (
 		<div
-			class="react-flow__viewport xyflow__viewport react-flow__container"
+			class="solid-flow__viewport xyflow__viewport solid-flow__container"
 			style={{ transform: transform() }}
 		>
 			{p.children}

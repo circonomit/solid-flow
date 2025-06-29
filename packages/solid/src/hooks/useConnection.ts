@@ -1,5 +1,5 @@
 import { type ConnectionState, pointToRendererPoint } from "@xyflow/system";
-import type { InternalNode, Node } from "../types";
+import type { InternalNode } from "../types";
 import type { SolidFlowState } from "../types/store";
 import { useStore } from "./useStore";
 

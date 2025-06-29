@@ -14,7 +14,7 @@ import type {
 	ViewportHelperFunctions,
 } from ".";
 
-export type ReactFlowJsonObject<
+export type SolidFlowJsonObject<
 	NodeType extends Node = Node,
 	EdgeType extends Edge = Edge,
 > = {
@@ -105,7 +105,7 @@ export type GeneralHelpers<
 	 *
 	 * @returns the nodes, edges and the viewport as a JSON object
 	 */
-	toObject: () => ReactFlowJsonObject<NodeType, EdgeType>;
+	toObject: () => SolidFlowJsonObject<NodeType, EdgeType>;
 	/**
 	 * Deletes nodes and edges.
 	 *
@@ -268,14 +268,14 @@ export type GeneralHelpers<
 };
 
 /**
- * The `ReactFlowInstance` provides a collection of methods to query and manipulate
+ * The `SolidFlowInstance` provides a collection of methods to query and manipulate
  * the internal state of your flow. You can get an instance by using the
  * [`useSolidFlow`](/api-reference/hooks/use-react-flow) hook or attaching a listener
  * to the [`onInit`](/api-reference/react-flow#event-oninit) event.
  *
  * @public
  */
-export type ReactFlowInstance<
+export type SolidFlowInstance<
 	NodeType extends Node = Node,
 	EdgeType extends Edge = Edge,
 > = GeneralHelpers<NodeType, EdgeType> &

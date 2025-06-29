@@ -3,7 +3,6 @@
 // import type { CSSProperties, HTMLAttributes, ReactNode, MouseEvent as ReactMouseEvent, ComponentType } from 'react';
 import type {
 	BezierPathOptions,
-	Connection,
 	ConnectionLineType,
 	DefaultEdgeOptionsBase,
 	EdgeBase,
@@ -56,7 +55,7 @@ export type Edge<
 		/**
 		 * Determines whether the edge can be updated by dragging the source or target to a new node.
 		 * This property will override the default set by the `edgesReconnectable` prop on the
-		 * `<ReactFlow />` component.
+		 * `<SolidFlow />` component.
 		 */
 		reconnectable?: boolean | HandleType;
 		focusable?: boolean;
@@ -125,7 +124,7 @@ export type EdgeWrapperProps<EdgeType extends Edge = Edge> = {
 /**
  * Many properties on an [`Edge`](/api-reference/types/edge) are optional. When a new edge is created,
  * the properties that are not provided will be filled in with the default values
- * passed to the `defaultEdgeOptions` prop of the [`<ReactFlow />`](/api-reference/react-flow#defaultedgeoptions) component.
+ * passed to the `defaultEdgeOptions` prop of the [`<SolidFlow />`](/api-reference/react-flow#defaultedgeoptions) component.
  */
 export type DefaultEdgeOptions = DefaultEdgeOptionsBase<Edge>;
 
@@ -265,7 +264,7 @@ export type SimpleBezierEdgeProps = EdgeComponentProps;
 
 /**
  * If you want to render a custom component for connection lines, you can set the
- * `connectionLineComponent` prop on the [`<ReactFlow />`](/api-reference/react-flow#connection-connectionLineComponent)
+ * `connectionLineComponent` prop on the [`<SolidFlow />`](/api-reference/react-flow#connection-connectionLineComponent)
  * component. The `ConnectionLineComponentProps` are passed to your custom component.
  *
  * @public

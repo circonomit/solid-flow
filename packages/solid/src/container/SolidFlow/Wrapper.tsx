@@ -1,7 +1,7 @@
 // import { useContext, type ReactNode } from 'react';
 import type { CoordinateExtent, NodeOrigin } from "@xyflow/system";
 import { type ParentProps, Show, useContext } from "solid-js";
-import { ReactFlowProvider } from "../../components/ReactFlowProvider";
+import { SolidFlowProvider } from "../../components/SolidFlowProvider";
 import StoreContext from "../../contexts/StoreContext";
 import type { Edge, FitViewOptions, Node } from "../../types";
 export function Wrapper(
@@ -36,7 +36,7 @@ export function Wrapper(
 				<>{p.children}</>
 			}
 		>
-			<ReactFlowProvider
+			<SolidFlowProvider
 				initialNodes={p.nodes}
 				initialEdges={p.edges}
 				defaultNodes={p.defaultNodes}
@@ -51,7 +51,7 @@ export function Wrapper(
 				nodeExtent={p.nodeExtent}
 			>
 				{p.children}
-			</ReactFlowProvider>
+			</SolidFlowProvider>
 		</Show>
 	);
 }

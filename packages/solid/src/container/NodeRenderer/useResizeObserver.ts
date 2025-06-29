@@ -1,5 +1,5 @@
 import type { InternalNodeUpdate } from "@xyflow/system";
-import { createEffect, createSignal, onCleanup, untrack } from "solid-js";
+import { createSignal, onCleanup } from "solid-js";
 import { useStore } from "../../hooks/useStore";
 import type { SolidFlowState } from "../../types";
 

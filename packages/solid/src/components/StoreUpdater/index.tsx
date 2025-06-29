@@ -20,7 +20,7 @@ import type {
 import { useRef } from "../../utils/hooks";
 
 // These fields exist in the global store, and we need to keep them up to date
-const reactFlowFieldsToTrack = [
+const solidFlowFieldsToTrack = [
 	"nodes",
 	"edges",
 	"defaultNodes",
@@ -78,16 +78,16 @@ const reactFlowFieldsToTrack = [
 	"paneClickDistance",
 ] as const;
 
-type ReactFlowFieldsToTrack = (typeof reactFlowFieldsToTrack)[number];
+type SolidFlowFieldsToTrack = (typeof solidFlowFieldsToTrack)[number];
 type StoreUpdaterProps<
 	NodeType extends Node = Node,
 	EdgeType extends Edge = Edge,
-> = Pick<SolidFlowProps<NodeType, EdgeType>, ReactFlowFieldsToTrack> & {
+> = Pick<SolidFlowProps<NodeType, EdgeType>, SolidFlowFieldsToTrack> & {
 	rfId: string;
 };
 
-// rfId doesn't exist in ReactFlowProps, but it's one of the fields we want to update
-const fieldsToTrack = [...reactFlowFieldsToTrack, "rfId"] as const;
+// rfId doesn't exist in SolidFlowProps, but it's one of the fields we want to update
+const fieldsToTrack = [...solidFlowFieldsToTrack, "rfId"] as const;
 
 const selector = (s: SolidFlowState) => ({
 	setNodes: s.setNodes,

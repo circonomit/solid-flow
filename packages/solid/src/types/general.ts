@@ -15,8 +15,8 @@ import type {
 	ZoomInOut,
 	ZoomTo,
 } from "@xyflow/system";
-import { type Component, JSX } from "solid-js";
-import type { Edge, EdgeProps, Node, NodeProps, ReactFlowInstance } from ".";
+import type { Component } from "solid-js";
+import type { Edge, EdgeProps, Node, NodeProps, SolidFlowInstance } from ".";
 
 export type SolidEvent<T extends Element, E extends MouseEvent | TouchEvent> = {
 	event: E;
@@ -137,7 +137,7 @@ export type FitView<NodeType extends Node = Node> = (
 export type OnInit<
 	NodeType extends Node = Node,
 	EdgeType extends Edge = Edge,
-> = (reactFlowInstance: ReactFlowInstance<NodeType, EdgeType>) => void;
+> = (reactFlowInstance: SolidFlowInstance<NodeType, EdgeType>) => void;
 
 /**
  * @inline

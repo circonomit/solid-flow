@@ -3,7 +3,7 @@
 
 import { For, type ParentProps } from "solid-js";
 import { EdgeWrapper } from "../../components/EdgeWrapper";
-import { useStore, useStoreApi } from "../../hooks/useStore";
+import { useStore } from "../../hooks/useStore";
 import { useVisibleEdgeIds } from "../../hooks/useVisibleEdgeIds";
 import type { Edge, Node, SolidFlowState } from "../../types";
 import type { GraphViewProps } from "../GraphView";
@@ -45,7 +45,7 @@ function EdgeRendererComponent<
 	const edgeIds = useVisibleEdgeIds(() => p.onlyRenderVisibleElements);
 
 	return (
-		<div class="react-flow__edges">
+		<div class="solid-flow__edges">
 			<MarkerDefinitions defaultColor={p.defaultMarkerColor} rfId={p.rfId} />
 
 			<For each={edgeIds()}>

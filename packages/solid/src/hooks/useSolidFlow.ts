@@ -18,7 +18,7 @@ import type {
 	GeneralHelpers,
 	InternalNode,
 	Node,
-	ReactFlowInstance,
+	SolidFlowInstance,
 	SolidFlowState,
 } from "../types";
 import { elementToRemoveChange, isEdge, isNode } from "../utils";
@@ -28,7 +28,7 @@ import useViewportHelper from "./useViewportHelper";
 const selector = (s: SolidFlowState) => () => !!s.panZoom.get();
 
 /**
- * This hook returns a ReactFlowInstance that can be used to update nodes and edges, manipulate the viewport, or query the current state of the flow.
+ * This hook returns a SolidFlowInstance that can be used to update nodes and edges, manipulate the viewport, or query the current state of the flow.
  *
  * @public
  * @example
@@ -57,7 +57,7 @@ const selector = (s: SolidFlowState) => () => !!s.panZoom.get();
 export function useSolidFlow<
 	NodeType extends Node = Node,
 	EdgeType extends Edge = Edge,
->(): ReactFlowInstance<NodeType, EdgeType> {
+>(): SolidFlowInstance<NodeType, EdgeType> {
 	const viewportHelper = useViewportHelper();
 	const store = useStoreApi();
 	const batchContext = useBatchContext();

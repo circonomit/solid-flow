@@ -8,14 +8,13 @@ import {
 	getOutgoers,
 	MarkerType,
 	type Node,
-	ReactFlow,
-	ReactFlowProvider,
+	SolidFlow,
+	SolidFlowProvider,
 	useEdgesState,
 	useNodesState,
 } from "@circonomit/solid-flow";
-import "@circonomit/solid-flow/dist/style.css";
-import { batch, createEffect } from "solid-js";
-import { untrack } from "solid-js/web";
+import "@circonomit/solid-flow/dist/styles/style.css";
+import { createEffect } from "solid-js";
 
 const initialNodes = [
 	{ id: "1", type: "input", data: { label: "1" }, position: { x: -150, y: 0 } },
@@ -102,14 +101,14 @@ export default function Flow() {
 	});
 
 	return (
-		<ReactFlowProvider>
+		<SolidFlowProvider>
 			<div
 				style={{
 					width: "100%",
 					height: "100vh",
 				}}
 			>
-				<ReactFlow
+				<SolidFlow
 					nodes={nodes()}
 					edges={edges()}
 					onNodesChange={onNodesChange}
@@ -123,8 +122,8 @@ export default function Flow() {
 					attributionPosition="top-right"
 				>
 					<Background variant={BackgroundVariant.Dots} gap={12} size={1} />
-				</ReactFlow>
+				</SolidFlow>
 			</div>
-		</ReactFlowProvider>
+		</SolidFlowProvider>
 	);
 }

@@ -158,7 +158,7 @@ function SolidFlow<NodeType extends Node = Node, EdgeType extends Edge = Edge>(
 	//     colorMode = 'light',
 	//     debug,
 	//     ...rest
-	//   }: ReactFlowProps<NodeType, EdgeType>,
+	//   }: SolidFlowProps<NodeType, EdgeType>,
 	//   ref: ForwardedRef<HTMLDivElement>
 	// ) {
 
@@ -327,7 +327,7 @@ function SolidFlow<NodeType extends Node = Node, EdgeType extends Edge = Edge>(
 				...wrapperStyle,
 			}}
 			ref={p.ref}
-			class={cc(["react-flow", p.class || p.className, colorModeClassName])}
+			class={cc(["solid-flow", p.class || p.className, colorModeClassName])}
 			id={p.id}
 		>
 			<Wrapper
@@ -481,17 +481,17 @@ function SolidFlow<NodeType extends Node = Node, EdgeType extends Edge = Edge>(
 }
 
 /**
- * The `<ReactFlow />` component is the heart of your React Flow application.
+ * The `<SolidFlow />` component is the heart of your React Flow application.
  * It renders your nodes and edges and handles user interaction
  *
  * @public
  *
  * @example
  * ```tsx
- *import { ReactFlow } from '@circonomit/solid-flow'
+ *import { SolidFlow } from '@circonomit/solid-flow'
  *
  *export default function Flow() {
- *  return (<ReactFlow
+ *  return (<SolidFlow
  *    nodes={...}
  *    edges={...}
  *    onNodesChange={...}

@@ -9,7 +9,7 @@ export function useStylesLoadedWarning() {
 	createEffect(() => {
 		if (process.env.NODE_ENV === "development") {
 			if (!checked) {
-				const pane = document.querySelector(".react-flow__pane");
+				const pane = document.querySelector(".solid-flow__pane");
 
 				if (pane && !(window.getComputedStyle(pane).zIndex === "1")) {
 					store.onError.get()?.("013", errorMessages["error013"]("solid"));

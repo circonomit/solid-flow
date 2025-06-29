@@ -3,13 +3,13 @@
 @import "../../../system/src/styles/style.css";
 @import "../../../system/src/styles/node-resizer.css";
 
-.react-flow__edge-textbg {
+.solid-flow__edge-textbg {
 	fill: var(
 		--xy-edge-label-background-color,
 		var(--xy-edge-label-background-color-default)
 	);
 }
 
-.react-flow__edge-text {
+.solid-flow__edge-text {
 	fill: var(--xy-edge-label-color, var(--xy-edge-label-color-default));
 }

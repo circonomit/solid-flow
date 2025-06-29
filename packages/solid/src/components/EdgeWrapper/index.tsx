@@ -8,10 +8,10 @@ import {
 	getMarkerId,
 } from "@xyflow/system";
 import cc from "classcat";
-import { createMemo, createSignal, JSX, Show } from "solid-js";
+import { createMemo, createSignal, Show } from "solid-js";
 import { Dynamic } from "solid-js/web";
 import { useStore, useStoreApi } from "../../hooks/useStore";
-import type { Edge, EdgeWrapperProps, SolidEvent } from "../../types";
+import type { Edge, EdgeWrapperProps } from "../../types";
 import { useRef } from "../../utils/hooks";
 import { ARIA_EDGE_DESC_KEY } from "../A11yDescriptions";
 import { EdgeUpdateAnchors } from "./EdgeUpdateAnchors";
@@ -64,7 +64,7 @@ export function EdgeWrapper<EdgeType extends Edge = Edge>(
 		const comp = InitialEdgeComp();
 		if (comp === undefined) {
 			p.onError?.("011", errorMessages["error011"](initialEdgeType()));
-			return builtinEdgeTypes.default;
+			return builtinEdgeTypes["default"];
 		} else {
 			return comp;
 		}
@@ -259,8 +259,8 @@ export function EdgeWrapper<EdgeType extends Edge = Edge>(
 			<svg style={{ "z-index": zIndex() }}>
 				<g
 					class={cc([
-						"react-flow__edge",
-						`react-flow__edge-${edgeType()}`,
+						"solid-flow__edge",
+						`solid-flow__edge-${edgeType()}`,
 						edge().className,
 						p.noPanClassName,
 						{

@@ -1,6 +1,6 @@
 // import { shallow } from 'zustand/shallow';
 
-import { JSX, Show } from "solid-js";
+import { Show } from "solid-js";
 import { useStore } from "../../hooks/useStore";
 import type { SolidFlowState } from "../../types";
 
@@ -17,7 +17,7 @@ export function UserSelection() {
 			when={storeData.userSelectionActive() && storeData.userSelectionRect()}
 		>
 			<div
-				class="react-flow__selection react-flow__container"
+				class="solid-flow__selection solid-flow__container"
 				style={{
 					transform: `translate(${storeData.userSelectionRect()!.x}px, ${storeData.userSelectionRect()!.y}px)`,
 					width: `${storeData.userSelectionRect()!.width}px`,

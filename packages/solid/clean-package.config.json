@@ -1,38 +1,13 @@
 {
 	"replace": {
-		"main": "dist/index.js",
-		"module": "dist/index.js",
-		"types": "dist/index.d.ts",
+		"main": "dist/index.mjs",
+		"module": "dist/index.mjs",
+		"types": "dist/index.d.mts",
 		"exports": {
 			".": {
-				"types": "./dist/index.d.ts",
+				"types": "./dist/index.d.mts",
 				"solid": "./dist/index.jsx",
-				"default": "./dist/index.js"
-			},
-			"./anatomy": {
-				"types": "./dist/components/anatomy.d.ts",
-				"solid": "./dist/components/anatomy.jsx",
-				"default": "./dist/components/anatomy.js"
-			},
-			"./factory": {
-				"types": "./dist/components/factory.d.ts",
-				"solid": "./dist/components/factory.jsx",
-				"default": "./dist/components/factory.js"
-			},
-			"./environment": {
-				"types": "./dist/providers/environment/index.d.ts",
-				"solid": "./dist/providers/environment/index.jsx",
-				"default": "./dist/providers/environment/index.js"
-			},
-			"./locale": {
-				"types": "./dist/providers/locale/index.d.ts",
-				"solid": "./dist/providers/locale/index.jsx",
-				"default": "./dist/providers/locale/index.js"
-			},
-			"./*": {
-				"types": "./dist/components/*/index.d.ts",
-				"solid": "./dist/components/*/index.jsx",
-				"default": "./dist/components/*/index.js"
+				"default": "./dist/index.mjs"
 			},
 			"./package.json": "./package.json"
 		}

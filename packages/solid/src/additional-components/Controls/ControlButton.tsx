@@ -9,7 +9,7 @@ export function ControlButton(p: ControlButtonProps) {
 	return (
 		<button
 			type="button"
-			class={cc(["react-flow__controls-button", p.class])}
+			class={cc(["solid-flow__controls-button", p.class])}
 			{...rest}
 		>
 			{p.children}

@@ -21,11 +21,7 @@ import {
 	type withResolvers,
 } from "@xyflow/system";
 import { createSignal, type Signal } from "solid-js";
-import {
-	createStore,
-	type SetStoreFunction,
-	Store as SolidStore,
-} from "solid-js/store";
+import { createStore, type SetStoreFunction } from "solid-js/store";
 import type {
 	Edge,
 	FitViewOptions,

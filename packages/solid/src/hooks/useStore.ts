@@ -17,7 +17,7 @@ const zustandErrorMessage = errorMessages["error001"]();
  * @returns The selected state slice
  *
  * @example
- * const nodes = useStore((state: ReactFlowState<MyNodeType>) => state.nodes);
+ * const nodes = useStore((state: SolidFlowState<MyNodeType>) => state.nodes);
  *
  */
 function useStore<StateSlice = unknown>(

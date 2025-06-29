@@ -204,7 +204,7 @@ function ResizeControl(_p: ResizeControlProps) {
 	return (
 		<div
 			class={cc([
-				"react-flow__resize-control",
+				"solid-flow__resize-control",
 				"nodrag",
 				...positionClassNames(),
 				p.variant,

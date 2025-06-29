@@ -7,12 +7,12 @@ import {
 	type Node,
 	type OnNodeDrag,
 	Panel,
-	ReactFlow,
-	ReactFlowProvider,
-	useReactFlow,
+	SolidFlow,
+	SolidFlowProvider,
+	useSolidFlow,
 } from "@circonomit/solid-flow";
-import "@circonomit/solid-flow/dist/base.css";
-import "@circonomit/solid-flow/dist/style.css";
+import "@circonomit/solid-flow/dist/styles/base.css";
+import "@circonomit/solid-flow/dist/styles/style.css";
 
 const onNodeDrag: OnNodeDrag = (_, node: Node, nodes: Node[]) =>
 	console.log("drag", node, nodes);
@@ -71,7 +71,7 @@ const BasicFlowImpl = () => {
 		updateNodeData,
 		toObject,
 		setViewport,
-	} = useReactFlow();
+	} = useSolidFlow();
 
 	const updatePos = () => {
 		setNodes((nodes) =>
@@ -134,7 +134,7 @@ const BasicFlowImpl = () => {
 	};
 
 	return (
-		<ReactFlow
+		<SolidFlow
 			defaultNodes={initialNodes}
 			defaultEdges={initialEdges}
 			nodes={initialNodes}
@@ -146,7 +146,7 @@ const BasicFlowImpl = () => {
 			onSelectionDragStart={printSelectionEvent("selection drag start")}
 			onSelectionDrag={printSelectionEvent("selection drag")}
 			onSelectionDragStop={printSelectionEvent("selection drag stop")}
-			class="react-flow-basic-example"
+			class="solid-flow--basic-example"
 			minZoom={0.2}
 			maxZoom={4}
 			fitView
@@ -190,13 +190,13 @@ const BasicFlowImpl = () => {
 					addNode
 				</button>
 			</Panel>
-		</ReactFlow>
+		</SolidFlow>
 	);
 };
 
 export default function BasicFlow() {
 	return (
-		<ReactFlowProvider>
+		<SolidFlowProvider>
 			<div
 				style={{
 					height: "100vh",
@@ -205,6 +205,6 @@ export default function BasicFlow() {
 			>
 				<BasicFlowImpl />
 			</div>
-		</ReactFlowProvider>
+		</SolidFlowProvider>
 	);
 }

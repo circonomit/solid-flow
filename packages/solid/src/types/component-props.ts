@@ -48,7 +48,7 @@ import type {
 } from ".";
 
 /**
- * ReactFlow component props.
+ * SolidFlow component props.
  * @public
  */
 export interface SolidFlowProps<
@@ -160,36 +160,36 @@ export interface SolidFlowProps<
 	) => void;
 	/** This event handler is called when a Node is updated
 	 * @example // Use NodesState hook to create edges and get onNodesChange handler
-	 * import ReactFlow, { useNodesState } from '@xyflow/react';
+	 * import SolidFlow, { useNodesState } from '@xyflow/react';
 	 * const [edges, setNodes, onNodesChange] = useNodesState(initialNodes);
 	 *
-	 * return (<ReactFlow onNodeChange={onNodeChange} {...rest} />)
+	 * return (<SolidFlow onNodeChange={onNodeChange} {...rest} />)
 	 * @example // Use helper function to update edge
-	 * import ReactFlow, { applyNodeChanges } from '@xyflow/react';
+	 * import SolidFlow, { applyNodeChanges } from '@xyflow/react';
 	 *
 	 * const onNodeChange = useCallback(
 	 *  (changes) => setNode((eds) => applyNodeChanges(changes, eds)),
 	 *  [],
 	 * );
 	 *
-	 * return (<ReactFlow onNodeChange={onNodeChange} {...rest} />)
+	 * return (<SolidFlow onNodeChange={onNodeChange} {...rest} />)
 	 */
 	onNodesChange?: OnNodesChange<NodeType>;
 	/** This event handler is called when a Edge is updated
 	 * @example // Use EdgesState hook to create edges and get onEdgesChange handler
-	 * import ReactFlow, { useEdgesState } from '@xyflow/react';
+	 * import SolidFlow, { useEdgesState } from '@xyflow/react';
 	 * const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
 	 *
-	 * return (<ReactFlow onEdgesChange={onEdgesChange} {...rest} />)
+	 * return (<SolidFlow onEdgesChange={onEdgesChange} {...rest} />)
 	 * @example // Use helper function to update edge
-	 * import ReactFlow, { applyEdgeChanges } from '@xyflow/react';
+	 * import SolidFlow, { applyEdgeChanges } from '@xyflow/react';
 	 *
 	 * const onEdgesChange = useCallback(
 	 *  (changes) => setEdges((eds) => applyEdgeChanges(changes, eds)),
 	 *  [],
 	 * );
 	 *
-	 * return (<ReactFlow onEdgesChange={onEdgesChange} {...rest} />)
+	 * return (<SolidFlow onEdgesChange={onEdgesChange} {...rest} />)
 	 */
 	onEdgesChange?: OnEdgesChange<EdgeType>;
 	/** This event handler gets called when a Node is deleted */
@@ -214,14 +214,14 @@ export interface SolidFlowProps<
 	 *
 	 * You can use the addEdge utility to convert the connection to a complete edge.
 	 * @example // Use helper function to update edges onConnect
-	 * import ReactFlow, { addEdge } from '@xyflow/react';
+	 * import SolidFlow, { addEdge } from '@xyflow/react';
 	 *
 	 * const onConnect = useCallback(
 	 *  (params) => setEdges((eds) => addEdge(params, eds)),
 	 *  [],
 	 * );
 	 *
-	 * return (<ReactFlow onConnect={onConnect} {...rest} />)
+	 * return (<SolidFlow onConnect={onConnect} {...rest} />)
 	 */
 	onConnect?: OnConnect;
 	/** This event handler gets called when a user starts to drag a connection line */

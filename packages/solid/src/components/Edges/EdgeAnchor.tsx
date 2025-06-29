@@ -27,7 +27,7 @@ export interface EdgeAnchorProps
 	type: string;
 }
 
-const EdgeUpdaterClassName = "react-flow__edgeupdater";
+const EdgeUpdaterClassName = "solid-flow__edgeupdater";
 
 export function EdgeAnchor(_p: EdgeAnchorProps) {
 	// {

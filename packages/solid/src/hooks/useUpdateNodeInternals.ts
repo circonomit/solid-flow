@@ -18,7 +18,7 @@ export function useUpdateNodeInternals(): UpdateNodeInternals {
 
 		updateIds.forEach((updateId) => {
 			const nodeElement = domNode?.querySelector(
-				`.react-flow__node[data-id="${updateId}"]`,
+				`.solid-flow__node[data-id="${updateId}"]`,
 			) as HTMLDivElement;
 
 			if (nodeElement) {

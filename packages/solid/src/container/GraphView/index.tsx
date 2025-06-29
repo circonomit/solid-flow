@@ -188,7 +188,7 @@ function GraphViewComponent<
 					component={p.connectionLineComponent}
 					containerStyle={p.connectionLineContainerStyle}
 				/>
-				<div class="react-flow__edgelabel-renderer" />
+				<div class="solid-flow__edgelabel-renderer" />
 				<NodeRenderer<NodeType>
 					nodeTypes={p.nodeTypes}
 					onNodeClick={p.onNodeClick}
@@ -205,7 +205,7 @@ function GraphViewComponent<
 					nodeExtent={p.nodeExtent}
 					rfId={p.rfId}
 				/>
-				<div class="react-flow__viewport-portal" />
+				<div class="solid-flow__viewport-portal" />
 			</Viewport>
 		</FlowRenderer>
 	);

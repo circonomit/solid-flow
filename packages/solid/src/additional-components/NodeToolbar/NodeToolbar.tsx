@@ -15,21 +15,21 @@ import type { InternalNode, SolidFlowState } from "../../types";
 import { NodeToolbarPortal } from "./NodeToolbarPortal";
 import type { NodeToolbarProps } from "./types";
 
-const nodeEqualityFn = (a?: InternalNode, b?: InternalNode) =>
-	a?.internals.positionAbsolute.x !== b?.internals.positionAbsolute.x ||
-	a?.internals.positionAbsolute.y !== b?.internals.positionAbsolute.y ||
-	a?.measured.width !== b?.measured.width ||
-	a?.measured.height !== b?.measured.height ||
-	a?.selected !== b?.selected ||
-	a?.internals.z !== b?.internals.z;
+// const nodeEqualityFn = (a?: InternalNode, b?: InternalNode) =>
+// 	a?.internals.positionAbsolute.x !== b?.internals.positionAbsolute.x ||
+// 	a?.internals.positionAbsolute.y !== b?.internals.positionAbsolute.y ||
+// 	a?.measured.width !== b?.measured.width ||
+// 	a?.measured.height !== b?.measured.height ||
+// 	a?.selected !== b?.selected ||
+// 	a?.internals.z !== b?.internals.z;
 
-const nodesEqualityFn = (a: InternalNode[], b: InternalNode[]) => {
-	if (a.length !== b.length) {
-		return false;
-	}
+// const nodesEqualityFn = (a: InternalNode[], b: InternalNode[]) => {
+// 	if (a.length !== b.length) {
+// 		return false;
+// 	}
 
-	return !a.some((node, i) => nodeEqualityFn(node, b[i]));
-};
+// 	return !a.some((node, i) => nodeEqualityFn(node, b[i]));
+// };
 
 const storeSelector = (state: SolidFlowState) => ({
 	viewport: () => ({
@@ -123,7 +123,7 @@ export function NodeToolbar(_p: NodeToolbarProps) {
 			<NodeToolbarPortal>
 				<div
 					style={wrapperStyle()}
-					class={cc(["react-flow__node-toolbar", p.class])}
+					class={cc(["solid-flow__node-toolbar", p.class])}
 					{...rest}
 					data-id={nodes()
 						.reduce((acc, node) => `${acc}${node.id} `, "")

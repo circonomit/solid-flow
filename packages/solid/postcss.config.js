@@ -1,13 +1,11 @@
-import { config } from "@dotenvx/dotenvx";
+require("@dotenvx/dotenvx").config();
 
-config();
-
-import { autoprefixer } from "autoprefixer";
-import { cssnano } from "cssnano";
-import { postcssCombine } from "postcss-combine-duplicated-selectors";
-import { postcssImport } from "postcss-import";
-import { postcssNested } from "postcss-nested";
-import { postcssRename } from "postcss-rename";
+const postcssImport = require("postcss-import");
+const postcssNested = require("postcss-nested");
+const postcssCombine = require("postcss-combine-duplicated-selectors");
+const postcssRename = require("postcss-rename");
+const autoprefixer = require("autoprefixer");
+const cssnano = require("cssnano");
 
 module.exports = (ctx) => {
 	return {

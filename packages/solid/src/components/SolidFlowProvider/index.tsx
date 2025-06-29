@@ -5,7 +5,7 @@ import { createStore } from "../../store";
 import type { Edge, FitViewOptions, Node } from "../../types";
 import { BatchProvider } from "../BatchProvider";
 
-export type ReactFlowProviderProps = {
+export type SolidFlowProviderProps = {
 	/** These nodes are used to initialize the flow. They are not dynamic. */
 	initialNodes?: Node[];
 	/** These edges are used to initialize the flow. They are not dynamic. */
@@ -49,28 +49,28 @@ export type ReactFlowProviderProps = {
 };
 
 /**
- * The `<ReactFlowProvider />` component is a [context provider](https://docs.solidjs.com/concepts/context)
+ * The `<SolidFlowProvider />` component is a [context provider](https://docs.solidjs.com/concepts/context)
  * that makes it possible to access a flow's internal state outside of the
- * [`<ReactFlow />`](/api-reference/react-flow) component. Many of the hooks we
+ * [`<SolidFlow />`](/api-reference/react-flow) component. Many of the hooks we
  * provide rely on this component to work.
  * @public
  *
  * @example
  * ```tsx
- *import { ReactFlow, ReactFlowProvider, useNodes } from '@circonomit/solid-flow'
+ *import { SolidFlow, SolidFlowProvider, useNodes } from '@circonomit/solid-flow'
  *
  *export default function Flow() {
  *  return (
- *    <ReactFlowProvider>
- *      <ReactFlow nodes={...} edges={...} />
+ *    <SolidFlowProvider>
+ *      <SolidFlow nodes={...} edges={...} />
  *      <Sidebar />
- *    </ReactFlowProvider>
+ *    </SolidFlowProvider>
  *  );
  *}
  *
  *function Sidebar() {
  *  // This hook will only work if the component it's used in is a child of a
- *  // <ReactFlowProvider />.
+ *  // <SolidFlowProvider />.
  *  const nodes = useNodes()
  *
  *  return <aside>do something with nodes</aside>;
@@ -78,11 +78,11 @@ export type ReactFlowProviderProps = {
  *```
  *
  * @remarks If you're using a router and want your flow's state to persist across routes,
- * it's vital that you place the `<ReactFlowProvider />` component _outside_ of
+ * it's vital that you place the `<SolidFlowProvider />` component _outside_ of
  * your router. If you have multiple flows on the same page you will need to use a separate
- * `<ReactFlowProvider />` for each flow.
+ * `<SolidFlowProvider />` for each flow.
  */
-export function ReactFlowProvider(p: ParentProps<ReactFlowProviderProps>) {
+export function SolidFlowProvider(p: ParentProps<SolidFlowProviderProps>) {
 	// FIXME: this should be reactive to updates in initial settings (I think)
 
 	const [store] = createSignal(

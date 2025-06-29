@@ -7,12 +7,7 @@
 
 import { createEffect, Show } from "solid-js";
 import { useStore, useStoreApi } from "../../hooks/useStore";
-import type {
-	Edge,
-	Node,
-	OnSelectionChangeFunc,
-	SolidFlowState,
-} from "../../types";
+import type { OnSelectionChangeFunc, SolidFlowState } from "../../types";
 
 type SelectionListenerProps = {
 	onSelectionChange?: OnSelectionChangeFunc;

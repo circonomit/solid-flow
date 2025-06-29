@@ -2,10 +2,8 @@
 import {
 	adoptUserNodes,
 	type CoordinateExtent,
-	clampPosition,
 	type EdgeSelectionChange,
 	fitViewport,
-	fitViewport as fitViewSystem,
 	handleExpandParent,
 	type InternalNodeUpdate,
 	initialConnection,
@@ -23,7 +21,7 @@ import type {
 	Edge,
 	FitViewOptions,
 	Node,
-	ReactFlowActions,
+	SolidFlowActions,
 	UnselectNodesAndEdgesParams,
 } from "../types";
 import {
@@ -61,7 +59,7 @@ const createStore = ({
 	nodeOrigin?: NodeOrigin;
 	nodeExtent?: CoordinateExtent;
 }) => {
-	// createWithEqualityFn<ReactFlowState>(
+	// createWithEqualityFn<SolidFlowState>(
 	// (set, get) => ({
 
 	const store = getInitialState({
@@ -128,8 +126,8 @@ const createStore = ({
 		} = store;
 		/*
 		 * setNodes() is called exclusively in response to user actions:
-		 * - either when the `<ReactFlow nodes>` prop is updated in the controlled ReactFlow setup,
-		 * - or when the user calls something like `reactFlowInstance.setNodes()` in an uncontrolled ReactFlow setup.
+		 * - either when the `<SolidFlow nodes>` prop is updated in the controlled SolidFlow setup,
+		 * - or when the user calls something like `reactFlowInstance.setNodes()` in an uncontrolled SolidFlow setup.
 		 *
 		 * When this happens, we take the note objects passed by the user and extend them with fields
 		 * relevant for internal React Flow operations.
@@ -508,7 +506,8 @@ const createStore = ({
 
 	const fitView = (options?: FitViewOptions): Promise<boolean> => {
 		return batch(() => {
-			const { width, height, minZoom, maxZoom, nodes, nodeLookup } = store;
+			const { width, height, minZoom, maxZoom, /* nodes, */ nodeLookup } =
+				store;
 			const panZoom = store.panZoom.get();
 
 			if (!panZoom) {
@@ -573,4 +572,4 @@ const createStore = ({
 
 export { createStore };
 
-type DefaultActions = ReactFlowActions<Node, Edge>;
+type DefaultActions = SolidFlowActions<Node, Edge>;

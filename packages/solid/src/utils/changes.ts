@@ -162,7 +162,7 @@ function applyChange(change: any, element: any): any {
  * @example
  *```tsx
  *import { useState, useCallback } from 'react';
- *import { ReactFlow, applyNodeChanges, type Node, type Edge, type OnNodesChange } from '@xyflow/react';
+ *import { SolidFlow, applyNodeChanges, type Node, type Edge, type OnNodesChange } from '@xyflow/react';
  *
  *export default function Flow() {
  *  const [nodes, setNodes] = useState<Node[]>([]);
@@ -175,11 +175,11 @@ function applyChange(change: any, element: any): any {
  *  );
  *
  *  return (
- *    <ReactFlow nodes={nodes} edges={edges} onNodesChange={onNodesChange} />
+ *    <SolidFlow nodes={nodes} edges={edges} onNodesChange={onNodesChange} />
  *  );
  *}
  *```
- * @remarks Various events on the <ReactFlow /> component can produce an {@link NodeChange}
+ * @remarks Various events on the <SolidFlow /> component can produce an {@link NodeChange}
  * that describes how to update the edges of your flow in some way.
  * If you don't need any custom behaviour, this util can be used to take an array
  * of these changes and apply them to your edges.
@@ -200,7 +200,7 @@ export function applyNodeChanges<NodeType extends Node = Node>(
  * @example
  * ```tsx
  *import { useState, useCallback } from 'react';
- *import { ReactFlow, applyEdgeChanges } from '@xyflow/react';
+ *import { SolidFlow, applyEdgeChanges } from '@xyflow/react';
  *
  *export default function Flow() {
  *  const [nodes, setNodes] = useState([]);
@@ -213,11 +213,11 @@ export function applyNodeChanges<NodeType extends Node = Node>(
  *  );
  *
  *  return (
- *    <ReactFlow nodes={nodes} edges={edges} onEdgesChange={onEdgesChange} />
+ *    <SolidFlow nodes={nodes} edges={edges} onEdgesChange={onEdgesChange} />
  *  );
  *}
  *```
- * @remarks Various events on the <ReactFlow /> component can produce an {@link EdgeChange}
+ * @remarks Various events on the <SolidFlow /> component can produce an {@link EdgeChange}
  * that describes how to update the edges of your flow in some way.
  * If you don't need any custom behaviour, this util can be used to take an array
  * of these changes and apply them to your edges.

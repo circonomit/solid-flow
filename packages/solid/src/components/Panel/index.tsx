@@ -35,7 +35,7 @@ export function Panel(_p: ParentProps<PanelProps>) {
 	return (
 		<div
 			{...p}
-			class={cc(["react-flow__panel", p.class, ...positionClasses()])}
+			class={cc(["solid-flow__panel", p.class, ...positionClasses()])}
 			style={style()}
 		>
 			{p.children}

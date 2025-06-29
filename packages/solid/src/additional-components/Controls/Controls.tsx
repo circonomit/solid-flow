@@ -1,6 +1,6 @@
 import type { PanelPosition } from "@xyflow/system";
 import cc from "classcat";
-import { JSX, mergeProps, Show } from "solid-js";
+import { mergeProps, Show } from "solid-js";
 import { Panel } from "../../components/Panel";
 import { useSolidFlow } from "../../hooks/useSolidFlow";
 import { useStore, useStoreApi } from "../../hooks/useStore";
@@ -84,7 +84,7 @@ function ControlsComponent(_p: ControlProps) {
 
 	return (
 		<Panel
-			class={cc(["react-flow__controls", orientationClass, p.className])}
+			class={cc(["solid-flow__controls", orientationClass, p.className])}
 			position={p.position}
 			style={p.style}
 			data-testid="rf__controls"
@@ -93,7 +93,7 @@ function ControlsComponent(_p: ControlProps) {
 			<Show when={p.showZoom}>
 				<ControlButton
 					onClick={onZoomInHandler}
-					class="react-flow__controls-zoomin"
+					class="solid-flow__controls-zoomin"
 					title="zoom in"
 					aria-label="zoom in"
 					disabled={storeData.maxZoomReached()}
@@ -102,7 +102,7 @@ function ControlsComponent(_p: ControlProps) {
 				</ControlButton>
 				<ControlButton
 					onClick={onZoomOutHandler}
-					class="react-flow__controls-zoomout"
+					class="solid-flow__controls-zoomout"
 					title="zoom out"
 					aria-label="zoom out"
 					disabled={storeData.minZoomReached()}
@@ -112,7 +112,7 @@ function ControlsComponent(_p: ControlProps) {
 			</Show>
 			<Show when={p.showFitView}>
 				<ControlButton
-					class="react-flow__controls-fitview"
+					class="solid-flow__controls-fitview"
 					onClick={onFitViewHandler}
 					title="fit view"
 					aria-label="fit view"
@@ -122,7 +122,7 @@ function ControlsComponent(_p: ControlProps) {
 			</Show>
 			<Show when={p.showInteractive}>
 				<ControlButton
-					class="react-flow__controls-interactive"
+					class="solid-flow__controls-interactive"
 					onClick={onToggleInteractivity}
 					title="toggle interactivity"
 					aria-label="toggle interactivity"
@@ -144,13 +144,13 @@ ControlsComponent.displayName = "Controls";
  * @public
  * @example
  *```tsx
- *import { ReactFlow, Controls } from '@circonomit/solid-flow'
+ *import { SolidFlow, Controls } from '@circonomit/solid-flow'
  *
  *export default function Flow() {
  *  return (
- *    <ReactFlow nodes={[...]} edges={[...]}>
+ *    <SolidFlow nodes={[...]} edges={[...]}>
  *      <Controls />
- *    </ReactFlow>
+ *    </SolidFlow>
  *  )
  *}
  *```

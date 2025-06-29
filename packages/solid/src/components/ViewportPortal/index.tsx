@@ -7,7 +7,7 @@ import { useStore } from "../../hooks/useStore";
 import type { SolidFlowState } from "../../types";
 
 const selector = (s: SolidFlowState) => () =>
-	s.domNode.get()?.querySelector(".react-flow__viewport-portal");
+	s.domNode.get()?.querySelector(".solid-flow__viewport-portal");
 
 export function ViewportPortal(p: ParentProps) {
 	const viewPortalDiv = useStore(selector);

@@ -4,7 +4,7 @@ import { useStore } from "../../hooks/useStore";
 import type { SolidFlowState } from "../../types";
 
 const selector = (s: SolidFlowState) => () =>
-	s.domNode.get()?.querySelector(".react-flow__edgelabel-renderer");
+	s.domNode.get()?.querySelector(".solid-flow__edgelabel-renderer");
 
 export type EdgeLabelRendererProps = {
 	children: any;

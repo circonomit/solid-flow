@@ -100,7 +100,7 @@ export function ZoomPane(_p: ZoomPaneProps) {
 			store.batch((store) => {
 				store.panZoom.set(panZoom);
 				store.transform.set([x, y, zoom]);
-				store.domNode.set(zoomPane?.closest(".react-flow") as HTMLDivElement);
+				store.domNode.set(zoomPane?.closest(".solid-flow") as HTMLDivElement);
 			});
 
 			onCleanup(() => {
@@ -131,7 +131,7 @@ export function ZoomPane(_p: ZoomPaneProps) {
 
 	return (
 		<div
-			class="react-flow__renderer"
+			class="solid-flow__renderer"
 			ref={(el) => (zoomPane = el)}
 			style={containerStyle}
 		>

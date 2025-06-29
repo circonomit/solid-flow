@@ -50,11 +50,11 @@ export function ConnectionLineWrapper<NodeType extends Node = Node>(
 				style={p.containerStyle}
 				width={storeData.width.get()}
 				height={storeData.height.get()}
-				class="react-flow__connectionline react-flow__container"
+				class="solid-flow__connectionline solid-flow__container"
 			>
 				<g
 					class={cc([
-						"react-flow__connection",
+						"solid-flow__connection",
 						getConnectionStatus(storeData.isValid()),
 					])}
 				>
@@ -161,7 +161,7 @@ const ConnectionLine = <NodeType extends Node = Node>(
 			<path
 				d={makePath()}
 				fill="none"
-				class="react-flow__connection-path"
+				class="solid-flow__connection-path"
 				style={p.style}
 			/>
 		);

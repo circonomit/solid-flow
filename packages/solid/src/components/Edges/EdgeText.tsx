@@ -26,7 +26,7 @@ function EdgeTextComponent(_p: EdgeTextProps) {
 		width: 0,
 		height: 0,
 	});
-	const edgeTextClasses = () => cc(["react-flow__edge-textwrapper", p.class]);
+	const edgeTextClasses = () => cc(["solid-flow__edge-textwrapper", p.class]);
 	let edgeTextRef: SVGTextElement | undefined;
 
 	createEffect(() => {
@@ -74,14 +74,14 @@ function EdgeTextComponent(_p: EdgeTextProps) {
 					x={-extractedProps.labelBgPadding[0]}
 					y={-extractedProps.labelBgPadding[1]}
 					height={edgeTextBbox().height + 2 * extractedProps.labelBgPadding[1]}
-					class="react-flow__edge-textbg"
+					class="solid-flow__edge-textbg"
 					style={extractedProps.labelBgStyle}
 					rx={extractedProps.labelBgBorderRadius}
 					ry={extractedProps.labelBgBorderRadius}
 				/>
 			</Show>
 			<text
-				class="react-flow__edge-text"
+				class="solid-flow__edge-text"
 				y={edgeTextBbox().height / 2}
 				dy="0.3em"
 				ref={edgeTextRef}

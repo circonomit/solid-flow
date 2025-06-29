@@ -32,7 +32,7 @@ export function BatchProvider<
 			hasDefaultNodes,
 			onNodesChange: getOnNodesChange,
 			nodeLookup,
-			edgeLookup,
+			// edgeLookup,
 		} = store;
 
 		// This is essentially an `Array.reduce` in imperative clothing. Processing

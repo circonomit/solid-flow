@@ -18,7 +18,7 @@ import cc from "classcat";
 import { createEffect, type JSX, mergeProps, splitProps } from "solid-js";
 import { useNodeId } from "../../contexts/NodeIdContext";
 import { useStore, useStoreApi } from "../../hooks/useStore";
-import { SolidEvent, type SolidFlowState } from "../../types";
+import type { SolidFlowState } from "../../types";
 
 /**
  * @expand
@@ -265,8 +265,8 @@ function HandleComponent(_p: HandleProps) {
 			data-handlepos={p.position}
 			data-id={`${storeData.rfId()}-${nodeId()}-${handleId()}-${p.type}`}
 			class={cc([
-				"react-flow__handle",
-				`react-flow__handle-${p.position}`,
+				"solid-flow__handle",
+				`solid-flow__handle-${p.position}`,
 				"nodrag",
 				storeData.noPanClassName(),
 				p.class,

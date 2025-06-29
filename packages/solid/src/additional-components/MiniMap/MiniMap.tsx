@@ -15,7 +15,6 @@ import { createEffect, type JSX, mergeProps, onCleanup, Show } from "solid-js";
 import { Panel } from "../../components/Panel";
 import { useStore, useStoreApi } from "../../hooks/useStore";
 import type { Node, SolidFlowState } from "../../types";
-import { useRef } from "../../utils/hooks";
 import MiniMapNodes from "./MiniMapNodes";
 import type { MiniMapProps } from "./types";
 
@@ -49,7 +48,7 @@ const selector = (s: SolidFlowState) => {
 	};
 };
 
-const ARIA_LABEL_KEY = "react-flow__minimap-desc";
+const ARIA_LABEL_KEY = "solid-flow__minimap-desc";
 
 function MiniMapComponent<NodeType extends Node = Node>(
 	_p: MiniMapProps<NodeType>,
@@ -169,14 +168,14 @@ function MiniMapComponent<NodeType extends Node = Node>(
 							: undefined,
 				} as JSX.CSSProperties
 			}
-			class={cc(["react-flow__minimap", p.class])}
+			class={cc(["solid-flow__minimap", p.class])}
 			data-testid="rf__minimap"
 		>
 			<svg
 				width={elementWidth()}
 				height={elementHeight()}
 				viewBox={`${x()} ${y()} ${width()} ${height()}`}
-				class="react-flow__minimap-svg"
+				class="solid-flow__minimap-svg"
 				role="img"
 				aria-labelledby={labelledBy()}
 				ref={svg}
@@ -195,7 +194,7 @@ function MiniMapComponent<NodeType extends Node = Node>(
 					nodeComponent={p.nodeComponent}
 				/>
 				<path
-					class="react-flow__minimap-mask"
+					class="solid-flow__minimap-mask"
 					d={`M${x() - offset()},${y() - offset()}h${width() + offset() * 2}v${height() + offset() * 2}h${
 						-width() - offset() * 2
 					}z
@@ -221,13 +220,13 @@ MiniMapComponent.displayName = "MiniMap";
  * @example
  *
  * ```jsx
- *import { ReactFlow, MiniMap } from '@circonomit/solid-flow';
+ *import { SolidFlow, MiniMap } from '@circonomit/solid-flow';
  *
  *export default function Flow() {
  *  return (
- *    <ReactFlow nodes={[...]]} edges={[...]]}>
+ *    <SolidFlow nodes={[...]]} edges={[...]]}>
  *      <MiniMap nodeStrokeWidth={3} />
- *    </ReactFlow>
+ *    </SolidFlow>
  *  );
  *}
  *```

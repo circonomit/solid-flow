@@ -26,7 +26,7 @@ export function Attribution(_p: AttributionProps) {
 		<Show when={!shouldHide()}>
 			<Panel
 				position={p.position}
-				class="react-flow__attribution"
+				class="solid-flow__attribution"
 				data-message="Please only hide this attribution when you are subscribed to React Flow Pro: https://pro.reactflow.dev"
 			>
 				<a

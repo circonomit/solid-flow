@@ -3,7 +3,6 @@ import type {
 	CoordinateExtent,
 	InternalNodeBase,
 	NodeBase,
-	NodeOrigin,
 	NodeProps as NodePropsBase,
 	OnError,
 } from "@xyflow/system";

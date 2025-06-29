@@ -59,7 +59,7 @@ export function BaseEdge(_p: BaseEdgeProps) {
 				{...pathProps}
 				d={extractedProps.path}
 				fill="none"
-				class={cc(["react-flow__edge-path", extractedProps.class])}
+				class={cc(["solid-flow__edge-path", extractedProps.class])}
 			/>
 			<Show when={extractedProps.interactionWidth}>
 				<path
@@ -67,7 +67,7 @@ export function BaseEdge(_p: BaseEdgeProps) {
 					fill="none"
 					stroke-opacity={0}
 					stroke-width={extractedProps.interactionWidth}
-					class="react-flow__edge-interaction"
+					class="solid-flow__edge-interaction"
 				/>
 			</Show>
 			<Show

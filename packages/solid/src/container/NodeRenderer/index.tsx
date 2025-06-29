@@ -41,7 +41,7 @@ function NodeRendererComponent<NodeType extends Node>(
 	const resizeObserver = useResizeObserver();
 
 	return (
-		<div class="react-flow__nodes" style={containerStyle}>
+		<div class="solid-flow__nodes" style={containerStyle}>
 			<For each={nodeIds()}>
 				{(nodeId) => {
 					return (

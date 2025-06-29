@@ -8,15 +8,7 @@ import {
 	nodeHasDimensions,
 } from "@xyflow/system";
 import cc from "classcat";
-import {
-	createEffect,
-	createRenderEffect,
-	createSignal,
-	type JSX,
-	on,
-	onMount,
-	Show,
-} from "solid-js";
+import type { JSX } from "solid-js";
 import { Dynamic } from "solid-js/web";
 import { Provider } from "../../contexts/NodeIdContext";
 import { useDrag } from "../../hooks/useDrag";
@@ -76,7 +68,7 @@ export function NodeWrapper<NodeType extends Node>(
 		const comp = initialNodeComponent();
 		if (comp === undefined) {
 			p.onError?.("003", errorMessages["error003"](initialNodeType()));
-			return builtinNodeTypes.default;
+			return builtinNodeTypes["default"];
 		}
 		return comp;
 	};
@@ -245,8 +237,8 @@ export function NodeWrapper<NodeType extends Node>(
 	return (
 		<div
 			class={cc([
-				"react-flow__node",
-				`react-flow__node-${nodeType()}`,
+				"solid-flow__node",
+				`solid-flow__node-${nodeType()}`,
 				{
 					// this is overwritable by passing `nopan` as a class name
 					[p.noPanClassName]: isDraggable(),

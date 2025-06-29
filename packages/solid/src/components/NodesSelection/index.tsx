@@ -76,8 +76,8 @@ export function NodesSelection<NodeType extends Node>(
 		<Show when={shouldShow()}>
 			<div
 				class={cc([
-					"react-flow__nodesselection",
-					"react-flow__container",
+					"solid-flow__nodesselection",
+					"solid-flow__container",
 					p.noPanClassName,
 				])}
 				style={{
@@ -85,8 +85,10 @@ export function NodesSelection<NodeType extends Node>(
 				}}
 			>
 				<div
-					ref={(node) => (nodeRef = node)}
-					class="react-flow__nodesselection-rect"
+					ref={(node) => {
+						nodeRef = node;
+					}}
+					class="solid-flow__nodesselection-rect"
 					onContextMenu={onContextMenu}
 					tabIndex={p.disableKeyboardA11y ? undefined : -1}
 					onKeyDown={p.disableKeyboardA11y ? undefined : onKeyDown}

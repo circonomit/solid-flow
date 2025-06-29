@@ -41,7 +41,7 @@ const Marker = (_p: MarkerProps) => {
 			{(symbol) => {
 				return (
 					<marker
-						class="react-flow__arrowhead"
+						class="solid-flow__arrowhead"
 						id={p.id}
 						markerWidth={`${p.width}`}
 						markerHeight={`${p.height}`}
@@ -82,7 +82,7 @@ const MarkerDefinitions = (p: MarkerDefinitionsProps) => {
 
 	return (
 		<Show when={markers().length > 0}>
-			<svg class="react-flow__marker">
+			<svg class="solid-flow__marker">
 				<defs>
 					<For each={markers()}>
 						{(marker) => {
