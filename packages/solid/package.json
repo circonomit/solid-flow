@@ -29,8 +29,6 @@
 	},
 	"scripts": {
 		"build": "tsup",
-		"postpack": "bun clean-package restore",
-		"prepack": "bun clean-package",
 		"typecheck": "tsc",
 		"release-it": "release-it --config ../../release-it.json"
 	},

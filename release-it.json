@@ -1,4 +1,5 @@
 {
+	"$schema": "https://unpkg.com/release-it/schema/release-it.json",
 	"git": {
 		"commitMessage": "chore: release ${npm.name} v${version}",
 		"tagName": "${npm.name}@${version}"
@@ -14,6 +15,7 @@
 		}
 	},
 	"npm": {
+		"publish": false,
 		"versionArgs": ["--workspaces-update=false"],
 		"publishPath": "./dist/"
 	},
